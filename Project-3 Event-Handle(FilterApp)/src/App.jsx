@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { category,item } from "./Data";
 import Product from "./Product";
+import "./App.css";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle'
 

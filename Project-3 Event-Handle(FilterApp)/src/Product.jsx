@@ -3,7 +3,7 @@ import "./Product.css";
 
 const Product = ({ category, item, categoryButtonClick, filterdata }) => {
     return (
-        <div className="product-container">
+        <div className="productes">
             <div className="category my-3">
                 {category.map((cat) => {
                     const { id, name } = cat;
@@ -17,7 +17,7 @@ const Product = ({ category, item, categoryButtonClick, filterdata }) => {
             </div>
 
 
-            <div className="item mt-4 ">
+            <div className="item ">
                 <div className="row justify-content-center">
                     {filterdata.length !== 0 ? (
                         filterdata.map((pr) => (
