@@ -1,0 +1,108 @@
+* {
+    outline: none;
+}
+
+:root {
+    --textcolor: #64b496;
+    --poppins: "Poppins", sans-serif;
+    --manerope: "Manrope", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+}
+.latest{
+    padding: 100px 0;
+}
+
+.news {
+    padding: 50px 0;
+}
+
+ .title {
+    padding-bottom: 20px;
+}
+
+ .title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2b2b2d;
+    font-family: var(--manerope);
+}
+
+ .title p {
+    max-width: 600px;
+    margin: auto;
+    font-size: 17px;
+    color: #979393;
+    text-align: center;
+}
+
+.news-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2em 0;
+}
+.card{
+    padding: 0;
+}
+ .card .card-body h5 {
+    margin-top: 5px;
+    font-family: var(--manerope);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+ .card .card-body p {
+    font-family: var(--poppins);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 2;
+    color: #7a7a7a;
+}
+
+ .card .card-body p span {
+    font-family: var(--poppins);
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+}
+
+ .card .card-body p a {
+    font-family: var(--manerope);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.875;
+    color: #777;
+}
+
+ .card .card-body .read {
+    font-family: var(--manerope);
+    font-size: 14px;
+    font-weight: bold;
+    color:#64b496;
+}
+
+ .card .card-body .read i {
+    padding-left: 8px;
+}
+
+ .card .imgs-box {
+    overflow: hidden;
+}
+
+ .card img {
+    transition: all 0.5s;
+}
+
+ .card img:hover {
+    transform: rotate(3deg) scale(1.1);
+}
