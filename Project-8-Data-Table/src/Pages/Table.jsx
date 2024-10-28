@@ -10,7 +10,7 @@ const Table = () => {
     const navigate = useNavigate();
     let data = JSON.parse(localStorage.getItem('users')) || [];
     const [record, setRecord] = useState(data);
-    const [mdelete, setMdelete] = useState([]);
+    // const [mdelete, setMdelete] = useState([]);
     const [status, setStatus] = useState("");
     const [filRecord, setFilRecord] = useState([]);
     const [search, setSearch] = useState("");
@@ -23,19 +23,32 @@ const Table = () => {
         alert("Record deleted");
     };
 
-    const handlechangedelete = (id, checked) => {
-        setMdelete(checked ? [...mdelete, id] : mdelete.filter(val => val !== id));
-    };
+    // const handlechangedelete = (id, checked) => {
+    //     setMdelete(checked ? [...mdelete, id] : mdelete.filter(val => val !== id));
+    // };
 
-    const multipleDelete = () => {
-        if (mdelete.length > 0) {
-            let md = record.filter(val => !mdelete.includes(val.id));
-            localStorage.setItem("users", JSON.stringify(md));
-            setFilRecord(md);
-        } else {
-            alert("Select at least one user");
-        }
+    // const multipleDelete = () => {
+    //     if (mdelete.length > 0) {
+    //         let md = record.filter(val => !mdelete.includes(val.id));
+    //         localStorage.setItem("users", JSON.stringify(md));
+    //         setFilRecord(md);
+    //     } else {
+    //         alert("Select at least one user");
+    //     }
+    // };
+
+    const updateStatus = (id) => {
+        const updatedRecords = record.map(user =>
+            user.id === id ? { ...user, status: user.status === "Active" ? "Deactive" : "Active" } : user
+        );
+        const updatedUser = updatedRecords.find(user => user.id === id);
+        setRecord(updatedRecords);
+        setFilRecord(updatedRecords);
+        localStorage.setItem("users", JSON.stringify(updatedRecords));
+    
+        alert(`Status changed to ${updatedUser.status} for ${updatedUser.name}`);
     };
+    
 
     useEffect(() => {
         let filtered = [...record];
@@ -59,21 +72,19 @@ const Table = () => {
             <div className="row">
                 <div className="col-lg-3 mb-5">
                     <select className="form-control" onChange={(e) => setStatus(e.target.value)} value={status}>
-                        <option>Select Status</option>
+                        <option value="">Select Status</option>
                         <option value="Active">Active</option>
                         <option value="Deactive">Deactive</option>
                     </select>
                 </div>
 
-                
                 <div className="col-lg-3 mb-5">
                     <input type="search" className="form-control" placeholder="Search here..." onChange={(e) => setSearch(e.target.value)} value={search} />
                 </div>
 
-              
                 <div className="col-lg-3 mb-5">
                     <select className="form-control" onChange={(e) => setSort(e.target.value)} value={sort}>
-                        <option value="select">Select Sort</option>
+                        <option value="">Select Sort</option>
                         <option value="asc">A - Z</option>
                         <option value="dsc">Z - A</option>
                     </select>
@@ -117,17 +128,17 @@ const Table = () => {
                                     <td>{val.course}</td>
                                     <td>{val.date}</td>
                                     <td>
-                                        <button onClick={() => deleteUser(val.id)} className="btn"><MdDelete />
-                                        </button>
-                                        <button onClick={() => navigate(`/edit`, { state: val })} className="btn"><FaEdit />
-                                        </button>
+                                        <button onClick={() => deleteUser(val.id)} className="btn"><MdDelete /></button>
+                                        <button onClick={() => navigate(`/edit`, { state: val })} className="btn"><FaEdit /></button>
                                     </td>
                                     <td>
-                                        <button style={{ color: val.status === "Active" ? "green" : "red", border: 0, background: "none", fontWeight: 700 }}>
+                                        <button 
+                                            onClick={() => updateStatus(val.id)} 
+                                            style={{ color: val.status === "Active" ? "green" : "red", border: 0, background: "none", fontWeight: 700 }}
+                                        >
                                             {val.status}
                                         </button>
                                     </td>
-                                    
                                 </tr>
                             ))}
                         </tbody>
