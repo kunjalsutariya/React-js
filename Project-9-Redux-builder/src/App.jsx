@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+
 function App() {
   const [Title, setTitle] = useState("")
   const [note, setNote] = useState("")
 
-  const record = useSelector(state => state.notes.users)
+  const record = useSelector(state => state.notes.user)
 
   const dispach = useDispatch()
 
@@ -42,9 +43,9 @@ function App() {
 
           <div>
             {
-              record.map((item) => {
+              record.map((item,index) => {
                 return (
-                  <div key={item.id}>
+                  <div key={index}>
                     <h2>{item.Title}</h2>
                     <p>{item.note}</p>
                   </div>

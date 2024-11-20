@@ -6,4 +6,4 @@ const rootreducer = combineReducers({
     notes : notesReducer
 })
  
-export default rootreducer
+export default rootreducer;

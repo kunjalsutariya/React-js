@@ -1,0 +1,99 @@
+/* General Layout */
+.budget-tracker-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1a73e8;
+}
+
+/* Sections */
+.card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input.input-field {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button.primary-button {
+  background-color: #1a73e8;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.primary-button:hover {
+  background-color: #155ab6;
+}
+
+/* Summary Section */
+.summary-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  flex: 1;
+  padding: 15px;
+  background: #e3f2fd;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 5px;
+}
+
+.summary-value {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.balance-value {
+  color: green;
+}
+
+/* Expense List */
+.expense-list-items {
+  list-style: none;
+  padding: 0;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.expense-amount {
+  font-weight: bold;
+}
+
+button.delete-button {
+  border: 1;
+  color: red;
+  cursor: pointer;
+  font-size: large;
+  font-weight: 600;
+}
+
+button.delete-button:hover {
+  color: darkred;
+}

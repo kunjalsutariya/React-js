@@ -1,25 +1,25 @@
 let initialState = {
-    users: localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users'))
+    user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user'))
         : []
 }
 const notesReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_USER':
-            let old = [...state.users,action.payload]
-            localStorage.setItem('users', JSON.stringify(old))
+            let old = [...state.user,action.payload]
+            localStorage.setItem('user', JSON.stringify(old))
         return{
             ...state,
-            users:old
+            user:old
         }
         
         case 'DELETE_USER':
             let deleteId = action.payload
-            let remove = state.users.filter((user) => user.id !== deleteId)
-            localStorage.setItem('users', JSON.stringify(remove))
+            let remove = state.user.filter((user) => user.id !== deleteId)
+            localStorage.setItem('user', JSON.stringify(remove))
             alert("not delete...")
             return{
                 ...state,
-                users:remove
+                user:remove
             }
             default :
             return state
