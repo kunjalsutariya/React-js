@@ -4,7 +4,7 @@ let initialState = {
 }
 const notesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_USER':
+        case 'adddata':
             let old = [...state.user,action.payload]
             localStorage.setItem('user', JSON.stringify(old))
         return{
@@ -12,7 +12,7 @@ const notesReducer = (state = initialState, action) => {
             user:old
         }
         
-        case 'DELETE_USER':
+        case 'delete':
             let deleteId = action.payload
             let remove = state.user.filter((user) => user.id !== deleteId)
             localStorage.setItem('user', JSON.stringify(remove))

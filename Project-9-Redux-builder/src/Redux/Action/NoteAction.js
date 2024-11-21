@@ -1,4 +1,6 @@
 export const Add = (data) =>{
+    console.log(data);
+    
     return{
         type:'adddata',
         payload:data

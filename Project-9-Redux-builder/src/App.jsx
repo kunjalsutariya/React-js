@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import { Add } from "./Redux/Action/NoteAction";
+import "./App.css"
 
 function App() {
   const [Title, setTitle] = useState("")
   const [note, setNote] = useState("")
 
-  const record = useSelector(state => state.notes.user)
+  const record = useSelector(state => state.user)
+console.log(record);
 
   const dispach = useDispatch()
 
@@ -23,40 +25,55 @@ function App() {
       Title,
       note
     }
-    dispach(add(obj))
+    dispach(Add(obj))
     setTitle("")
     setNote("")
     alert("not added")
   }
   return (
     <>
-      <div>
-        <div>
-          <h1>GOOGLE KEEP</h1>
-          <div>
-            <form onSubmit={handlesubmit}>
-              <input type="text" onChange={(e) => setTitle(e.target.value)} placeholder="Title" value={Title || ""} />
-              <textarea onChange={(e) => setNote(e.target.value)} placeholder="Note" value={note || ""}></textarea>
-              <button type="submit">Submit</button>
-            </form>
-          </div>
-
-          <div>
-            {
-              record.map((item,index) => {
-                return (
-                  <div key={index}>
-                    <h2>{item.Title}</h2>
-                    <p>{item.note}</p>
-                  </div>
-                )
-              })
-            }
-          </div>
-
+    <div className="container">
+      <div className="row">
+        <header className="header">
+          <h1>📒 Google Keep Clone</h1>
+        </header>
+  
+        <div className="form-container">
+          <form onSubmit={handlesubmit} className="note-form">
+            <input
+              type="text"
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Enter Title"
+              value={Title || ""}
+              className="note-input"
+            />
+            <textarea
+              onChange={(e) => setNote(e.target.value)}
+              placeholder="Write your note here..."
+              value={note || ""}
+              className="note-textarea"
+            ></textarea>
+            <button type="submit" className="submit-button">Add Note</button>
+          </form>
+        </div>
+  
+        <div className="notes-container">
+          {record.length > 0 ? (
+            record.map((item, index) => (
+              <div key={index} className="note-card">
+                <h2 className="note-title">{item.Title}</h2>
+                <p className="note-content">{item.note}</p>
+              </div>
+            ))
+          ) : (
+            <p className="no-notes">No notes available. Start adding some!</p>
+          )}
         </div>
       </div>
-    </>
+    </div>
+  </>
+  
+  
   )
 }
 export default App;

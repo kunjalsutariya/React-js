@@ -5,23 +5,29 @@ const App = () => {
   const [budget, setBudget] = useState(0);
   const [expenses, setExpenses] = useState([]);
   const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState("");
+  const [budgetAmount, setBudgetAmount] = useState(""); // Separate state for setting the budget
+  const [expenseAmount, setExpenseAmount] = useState(""); // Separate state for expense amount
 
   const totalExpenses = expenses.reduce((acc, curr) => acc + curr.amount, 0);
   const balance = budget - totalExpenses;
 
   const handleSetBudget = (e) => {
     e.preventDefault();
-    setBudget(Number(amount));
-    setAmount("");
+    if (budgetAmount > 0) {
+      setBudget(Number(budgetAmount));
+      setBudgetAmount("");
+    }
   };
 
   const handleAddExpense = (e) => {
     e.preventDefault();
-    if (title && amount > 0) {
-      setExpenses([...expenses, { id: Date.now(), title, amount: Number(amount) }]);
+    if (title && expenseAmount > 0) {
+      setExpenses([
+        ...expenses,
+        { id: Date.now(), title, amount: Number(expenseAmount) },
+      ]);
       setTitle("");
-      setAmount("");
+      setExpenseAmount("");
     }
   };
 
@@ -42,8 +48,8 @@ const App = () => {
           <input
             type="number"
             placeholder="Enter Total Budget"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            value={budgetAmount}
+            onChange={(e) => setBudgetAmount(e.target.value)}
             className="input-field"
           />
           <button type="submit" className="primary-button">
@@ -66,8 +72,8 @@ const App = () => {
           <input
             type="number"
             placeholder="Expense Amount"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            value={expenseAmount}
+            onChange={(e) => setExpenseAmount(e.target.value)}
             className="input-field"
           />
           <button type="submit" className="primary-button">
@@ -115,7 +121,6 @@ const App = () => {
         )}
       </section>
     </div>
-
   );
 };
 
