@@ -1,0 +1,49 @@
+
+h2{
+  font-size: 35px;
+}
+.card{
+  background-color: #bbceee7c;
+}
+.product-card {
+  border: 1px solid rgba(128, 128, 128, 0.411);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-img {
+
+  object-fit: cover;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #8111cbb2, #84cbe2);
+  border: none;
+  transition: 1s;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #84cbe2, #8111cbb2);
+  transition: 1s;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-text {
+  color: #555;
+}
+
+.badge {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.6rem;
+}
