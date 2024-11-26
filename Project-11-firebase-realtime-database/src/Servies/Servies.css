@@ -1,0 +1,27 @@
+* {
+    outline: none;
+}
+
+:root {
+    --textcolor: #64b496;
+    --poppins: "Poppins", sans-serif;
+    --manerope: "Manrope", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+}
+.card{
+    background-color: #f7f7f8;
+}
+.card .card-icon{
+    color: #64b496;
+    font-size: 33px;
+    padding-top:10px;
+}

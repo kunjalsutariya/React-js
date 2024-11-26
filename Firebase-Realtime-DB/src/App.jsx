@@ -1,0 +1,23 @@
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import './App.css'
+import View from './Pages/View'
+import Add from './Pages/Add'
+import Edit from './Pages/Edit'
+
+function App() {
+
+  return (
+    
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<View />} />
+        <Route path="/" element={<Add />} />
+        <Route path="/" element={<Edit />} />
+      </Routes>
+    </BrowserRouter>
+  
+  )
+}
+
+export default App
