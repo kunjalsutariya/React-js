@@ -12,12 +12,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<View />} />
-        <Route path="/" element={<Add />} />
-        <Route path="/" element={<Edit />} />
+        <Route path="/add" element={<Add />} />
+        <Route path="/edit" element={<Edit />} />
       </Routes>
     </BrowserRouter>
   
   )
 }
 
-export default App
+export default App;

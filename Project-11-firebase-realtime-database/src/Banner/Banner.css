@@ -32,7 +32,6 @@ body{
 .banner-contant{
     max-width: 550px;
     position: absolute;
-    z-index: 99999999;
     top: 0;
     left:10%;
     margin-top: 15%; 
@@ -53,7 +52,7 @@ body{
     font-family: var(--manerope);
     font-weight: 900;
     padding-bottom: 20px;
-    z-index: -1111111;
+    z-index: -1;
 }
 .banner-contant p{
     font-size: 15px;
