@@ -1,0 +1,89 @@
+* {
+    outline: none;
+}
+
+:root {
+    --textcolor: #64b496;
+    --poppins: "Poppins", sans-serif;
+    --manerope: "Manrope", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+}
+.oraganics{
+    padding: 100px 0 230px;
+}
+
+.deal-card{
+    width: 500px;
+    height: 275px;
+    display: flex;
+    justify-content: center;
+    background-color: #f3ddcd68;
+    position: relative;
+    top: 55%;
+    box-shadow: -3px 3px 8px 5px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    border-radius: 5px;
+}
+.deal-card h4{
+    color: #64b496;
+    font-size: 24px;
+    font-family: var(--poppins);
+    margin: 0 0 8px;
+    font-weight: bold;
+} 
+.deal-card h4 span{
+    font-size: 16px;
+    font-family: var(--poppins);
+    color: black;
+    font-weight: lighter;
+}
+.deal-card h2{
+    margin-top: 12px;
+    margin-bottom: 15px;
+    font-family: "Manrope", sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #2b2b2d;
+}
+.deal-card p{
+    font-size: 15px;
+    font-weight: 300;
+    font-family: var(--poppins);
+    letter-spacing: 1px;
+    color: #0000005f;
+}
+.counter-inner{
+    border: 1px solid #e9cbbe;
+    border-radius: 5px;
+    width: 55%;
+    padding: 12px 24px;
+}
+.counter-inner h4 {
+    width: 50px;
+    margin: 0;
+    position: relative;
+    display: grid;
+    font-family: var(--poppins);
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #7a7a7a;
+    text-align: center;
+}
+.counter-inner h4 span{
+    font-family: var(--poppins);
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #2b2b2d;
+}

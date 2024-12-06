@@ -1,0 +1,68 @@
+* {
+    outline: none;
+}
+
+:root {
+    --textcolor: #64b496;
+    --poppins: "Poppins", sans-serif;
+    --manerope: "Manrope", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+}
+.OFFER{
+    padding: 0 0 100px;
+}
+.offer-banner{
+    position: relative;
+    width: 450px;
+}
+.offer-banner .offerrcontant{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+}
+.offer-banner h5{
+    font-size: 20px;
+    font-family: var(--manerope);
+    margin-bottom: 15px;
+    font-weight: bold;
+    line-height: 1.2;
+
+}
+.offer-banner p span{
+    font-size: 20px;
+    font-weight: bold;
+    color: #64b496;
+    margin-right: 5px;
+}
+.offer-banner p{
+    padding-bottom: 15px;
+    font-family: var(--poppins);
+    font-size: 14px;
+    line-height: 1.2;
+    color: #777;
+    letter-spacing: 1px;
+
+}
+.offer-banner button {
+    padding: 8px 22px;
+    background-color: #64b496;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.offer-banner button:hover {
+    background-color: black;
+    transition: 1s;
+}
+
