@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./add.css";
 
 const Add = () => {
   const [taskName, setTaskName] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [tasks, setTasks] = useState([]);
+  const navigate = useNavigate();
 
   const addTodo = () => {
     if (taskName && taskDescription) {
@@ -32,9 +34,15 @@ const Add = () => {
     setTasks(tasks.filter((task) => task.id !== taskId));
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("isAuthenticated"); // Clear the authentication flag
+    navigate("/"); // Redirect to the login page
+  };
+
   return (
     <div className="todo-container">
       <h1>My Todos</h1>
+     
       <div className="input-section">
         <input
           type="text"
@@ -49,6 +57,9 @@ const Add = () => {
           onChange={(e) => setTaskDescription(e.target.value)}
         />
         <button onClick={addTodo}>Add Todo</button>
+        <button onClick={handleLogout} className="logout-button">
+        Logout
+      </button>
       </div>
       <ul>
         {tasks.map((task) => (

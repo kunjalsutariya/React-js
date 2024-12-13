@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import SignUp from "./Pages/signup";
-import SignIn from "./Pages/SignIn";
+import SignIn from "./Pages/signin";
 import Add from "./Pages/add";
 import "./App.css";
 
@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("isAuthenticated");
-    if (loggedInUser) {
+    if (loggedInUser === "true") {
       setIsAuthenticated(true);
     }
   }, []);
@@ -24,7 +24,12 @@ function App() {
           element={<SignIn users={users} setIsAuthenticated={setIsAuthenticated} />}
         />
         <Route path="/signup" element={<SignUp setUsers={setUsers} />} />
-        <Route path="/add" element={isAuthenticated ? <Add /> : <SignIn />} />
+        <Route
+          path="/add"
+          element={
+            isAuthenticated ? <Add /> : <Navigate to="/" />
+          }
+        />
       </Routes>
     </Router>
   );
