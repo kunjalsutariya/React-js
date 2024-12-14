@@ -1,0 +1,172 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+/* Heading */
+.container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-group {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #ffebcd;
+    font-weight: bold;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: #f9f9f9;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.input-field:focus {
+    border: 2px solid #6e8efb;
+    background: #fff;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #6e8efb;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:hover {
+    background: #4b6cb7;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Table/Record Section */
+.record-container {
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow-x: auto;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table thead {
+    background: #6e8efb;
+    color: #fff;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+    background: rgba(110, 142, 251, 0.2);
+}
+
+/* Buttons in View Section */
+.action-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    margin: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.action-btn.edit {
+    background: #ffc107;
+}
+
+.action-btn.delete {
+    background: #dc3545;
+}
+
+.action-btn.status {
+    background: #28a745;
+}
+
+.action-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .form-group label {
+        font-size: 1rem;
+    }
+    .input-field {
+        font-size: 0.9rem;
+    }
+    .submit-btn {
+        font-size: 1rem;
+    }
+    table {
+        font-size: 0.9rem;
+    }
+}
